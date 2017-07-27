@@ -15,7 +15,10 @@ def isPermutation(word_one, word_two):
             letters_two[letters] += 1
         else:
             letters_two[letters] = 1
-    keys = letters_one.items()
+    keys_one = letters_one.keys()
+    keys_two = letters_two.keys()
+    if set(keys_one) != set(keys_two):
+        return False
     for key in letters_one.keys():
         if letters_one[key] != letters_two[key]:
             return False
